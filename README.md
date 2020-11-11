@@ -8,4 +8,11 @@
 Package iprange provides functions to work with different IP ranges.
 Supports IPv4 and IPv6.
 
+Supported ranges formats:
+
+- Single address. Examples: `192.168.1.1`, `2001:db8:a0b:12f0::1`
+- CIDR. Examples: `192.168.1.0/24`, `2001:db8:a0b:12f0::1`
+- Begin\End. Examples: `192.168.1.10\192.168.2.20`, `2001:db8:a0b:12f0::1\2001:db8:a0b:12f0::10`
+- Octets ranges: `192.168.1,3-5.1-10`, `2001:db8:a0b:12f0::1,1-10`
+
 For more information see the docs.

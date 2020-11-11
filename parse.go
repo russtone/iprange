@@ -110,11 +110,6 @@ func parse(s string, parseFn parseFunc, iplen int) Range {
 		return &singleRange{octets2ip(ip.min())}
 	}
 
-	oclen := net.IPv4len
-	if iplen == net.IPv6len {
-		oclen /= 2
-	}
-
 	// Sort ip2octets.
 	ip.sort()
 

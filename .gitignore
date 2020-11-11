@@ -13,3 +13,6 @@
 
 # Misc
 .DS_Store
+
+# Dev
+.idea

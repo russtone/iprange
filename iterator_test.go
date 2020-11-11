@@ -14,9 +14,9 @@ import (
 
 func TestIterator(t *testing.T) {
 	tests := []struct {
-		s []string
-		res []string
-		ip string
+		s        []string
+		res      []string
+		ip       string
 		contains bool
 	}{
 		//

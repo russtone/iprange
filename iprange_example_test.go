@@ -83,7 +83,7 @@ func ExampleIterator() {
 func ExampleRanges() {
 	rr := make(iprange.Ranges, 0)
 	rr = append(rr, iprange.Parse("192.168.1.0/24"))
-	rr = append(rr,  iprange.Parse("192.168.2.0/24"))
+	rr = append(rr, iprange.Parse("192.168.2.0/24"))
 	fmt.Println(rr.Count())
 	fmt.Println(rr.Contains(net.ParseIP("192.168.1.10")))
 	fmt.Println(rr.Contains(net.ParseIP("192.168.2.10")))

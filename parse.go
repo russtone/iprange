@@ -234,7 +234,7 @@ loop:
 		if c < len(s) && s[c] == '.' {
 			ip, n := parseIPv4(s)
 
-			return ip, cc+n
+			return ip, cc + n
 		}
 
 		// Save this 16-bit chunk.

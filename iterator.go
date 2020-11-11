@@ -58,7 +58,7 @@ func (it *singleIterator) Reset() {
 type minMaxIterator struct {
 	minMaxRange
 	current *big.Int
-	last *big.Int
+	last    *big.Int
 }
 
 var _ Iterator = &minMaxIterator{}
@@ -87,7 +87,7 @@ func (it *minMaxIterator) Reset() {
 
 type octetsIterator struct {
 	octetsRange
-	done bool
+	done    bool
 	indexes []int
 	current []uint16
 }
@@ -109,7 +109,7 @@ func (it *octetsIterator) Next(out *net.IP) bool {
 
 	var (
 		oct uint16
-		j int
+		j   int
 	)
 
 	for i := len(it.octets) - 1; i >= 0; i-- {
@@ -123,7 +123,7 @@ func (it *octetsIterator) Next(out *net.IP) bool {
 			break
 		} else if j+1 < len(it.octets[i]) {
 			it.current[i] = it.octets[i][j+1].lo
-			it.indexes[i] = j+1
+			it.indexes[i] = j + 1
 			break
 		}
 

@@ -104,7 +104,7 @@ func (r octetsRange) Count() *big.Int {
 	for i := len(r.octets) - 1; i >= 0; i-- {
 		s := big.NewInt(0)
 		for _, b := range r.octets[i] {
-			s.Add(s, big.NewInt(int64(b.hi - b.lo + 1)))
+			s.Add(s, big.NewInt(int64(b.hi-b.lo+1)))
 		}
 		c.Mul(c, s)
 	}
@@ -115,7 +115,7 @@ func (r octetsRange) Count() *big.Int {
 func (r octetsRange) Iterator() Iterator {
 	indexes := make([]int, len(r.octets))
 	min := r.octets.min()
-	return &octetsIterator{r, false,indexes, min}
+	return &octetsIterator{r, false, indexes, min}
 }
 
 //

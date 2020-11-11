@@ -35,7 +35,7 @@ func ip2octets(ip net.IP) []uint16 {
 	}
 
 	for i := 0; i < net.IPv6len/2; i++ {
-		octs = append(octs, uint16(ip[2*i]) << 8 | uint16(ip[2*i+1]))
+		octs = append(octs, uint16(ip[2*i])<<8|uint16(ip[2*i+1]))
 	}
 
 	return octs

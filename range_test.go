@@ -80,7 +80,7 @@ func TestContains(t *testing.T) {
 
 func TestCount(t *testing.T) {
 	tests := []struct {
-		ss   []string
+		ss    []string
 		count int64
 	}{
 		//

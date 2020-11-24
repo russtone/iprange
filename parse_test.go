@@ -36,7 +36,7 @@ func TestInvalid(t *testing.T) {
 		"192.168.1.1-2/24",
 		"192.168.1.1/24/2",
 
-		// begin\end
+		// begin_end
 		"192.168.1.1-192.168",
 		"192.168.1.1-192.168.1.10/24",
 		"192.168.1.1-1:2::1",
@@ -63,10 +63,10 @@ func TestInvalid(t *testing.T) {
 		"1::abab:dead/129",
 		"1::1-2:dead/129",
 
-		// begin\end
-		"1::abab:dead\\1:2:3",
-		"1-2::abab:dead\\1:2:3",
-		"1::abab:dead\\1:2::3/24",
+		// begin_end
+		"1::abab:dead_1:2:3",
+		"1-2::abab:dead_1:2:3",
+		"1::abab:dead_1:2::3/24",
 
 		// octets
 		"1-2-3::abab:dead",
@@ -93,8 +93,8 @@ func TestValid(t *testing.T) {
 		// cidr
 		"192.168.1.1/24",
 
-		// begin\end
-		"192.168.1.1\\192.168.2.10",
+		// begin_end
+		"192.168.1.1_192.168.2.10",
 
 		// octets
 		"192.168.1,2-5.1,2,3",
@@ -115,9 +115,9 @@ func TestValid(t *testing.T) {
 		"::/120",
 		"1:2:3:4::/120",
 
-		// begin\end
-		"1:2:3:4::abab:1\\1:2:3:4::abab:10",
-		"1:2:3:4::\\1:2:3:4::5",
+		// begin_end
+		"1:2:3:4::abab:1_1:2:3:4::abab:10",
+		"1:2:3:4::_1:2:3:4::5",
 
 		// octets
 		"1:2:3:4::1-10:1,2,ffff",

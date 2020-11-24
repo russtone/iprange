@@ -33,7 +33,7 @@ func ExampleRange_cidr() {
 }
 
 func ExampleRange_beginend() {
-	r := iprange.Parse("192.168.1.10\\192.168.2.9")
+	r := iprange.Parse("192.168.1.10_192.168.2.9")
 
 	fmt.Println(r.Count())
 	fmt.Println(r.Contains(net.ParseIP("192.168.2.1")))

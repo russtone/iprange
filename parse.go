@@ -9,7 +9,7 @@ type parseFunc func(string) (ipOctets, int)
 // Parse parses s as an IP addresses range (IPv4 or IPv6), returning the result.
 // The string s can be in the following formats:
 // single IP ("192.0.2.1", "2001:db8::68"), CIDR range ("192.168.1.0/24", "2001:db8::68/120"),
-// begin\end range ("192.168.1.1\192.168.1.10", "2001:db8::68\"2001:db8::80") or
+// begin_end range ("192.168.1.1_192.168.1.10", "2001:db8::68_2001:db8::80") or
 // octets range ("192.168.1,3,5.1-10", "2001:db8::0,1:68-80").
 // If s is not a valid textual representation of an IP addresses range,
 // ParseIP returns nil.
@@ -35,8 +35,8 @@ func parse(s string, parseFn parseFunc, iplen int) Range {
 
 	s = s[c:]
 
-	if len(s) > 0 && s[0] == '\\' {
-		// begin\end range.
+	if len(s) > 0 && s[0] == '_' {
+		// begin_end range.
 
 		if ip.hasRanges() {
 			// Already have octet ranges.
@@ -204,7 +204,7 @@ func parseIPv6(s string) (ip ipOctets, cc int) {
 		cc += 2
 
 		// Might be only ellipsis
-		if len(s) == 0 || s[0] == '\\' || s[0] == '/' {
+		if len(s) == 0 || s[0] == '_' || s[0] == '/' {
 			for i := 0; i < net.IPv6len/2; i++ {
 				ip.push(i, 0, 0)
 			}
@@ -277,7 +277,7 @@ loop:
 			ellipsis = i
 			s = s[1:]
 			cc++
-			if len(s) == 0 || s[0] == '\\' || s[0] == '/' { // can be at end
+			if len(s) == 0 || s[0] == '_' || s[0] == '/' { // can be at end
 				break
 			}
 		}

@@ -52,9 +52,9 @@ func TestIterator(t *testing.T) {
 			true,
 		},
 
-		// begin\end
+		// begin_end
 		{
-			[]string{"35.231.145.10\\35.231.145.13"},
+			[]string{"35.231.145.10_35.231.145.13"},
 			[]string{
 				"35.231.145.10",
 				"35.231.145.11",
@@ -105,9 +105,9 @@ func TestIterator(t *testing.T) {
 			true,
 		},
 
-		// begin\end
+		// begin_end
 		{
-			[]string{"2001:db8::\\2001:db8::5"},
+			[]string{"2001:db8::_2001:db8::5"},
 			[]string{
 				"2001:db8::",
 				"2001:db8::1",
